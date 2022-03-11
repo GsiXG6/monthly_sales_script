@@ -26,7 +26,6 @@ const COLOR_FORWARD		= "#7030A0";
 const COLOR_CANCLED		= "grey";
 const COLOR_URGENT		= "red";
 const COLOR_NEARDUE		= "#E26B0A";
-const COLOR_HIGHLIGHT	= "#D9D9D9";
 
 const g_bResetCellValue = false;
 const g_bResetFillColor = true;
@@ -336,12 +335,6 @@ function InsertCondFormatting(sheet)
 		conditionalFormula.custom.rule.formula = "=$" + g_sLetterTemps2 + "$" + i + "<=" + CODE_URGENT;
 		conditionalFormula.custom.format.font.color = COLOR_URGENT;
 	}
-	
-	//highlight selected row
-	//range = sheet.getRange("A" + g_iBodyStart + ":P" + g_iBodyEnd);
-	//conditionalFormula = range.conditionalFormats.add(Excel.ConditionalFormatType.custom);
-	//conditionalFormula.custom.rule.formula = `=OR(CELL("row")=CELL("row",A${g_iBodyStart}))`;
-	//conditionalFormula.custom.format.fill.color = COLOR_HIGHLIGHT;
 }
 
 function HideExtraRowColumn(sheet)
