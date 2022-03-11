@@ -15,6 +15,7 @@ const CODE_COMPLETED	= '"F"';
 const CODE_PENDING		= '"P"';
 const CODE_HAVESTOCK	= '"HS"';
 const CODE_FORWARD		= '"FN"';
+const CODE_CANCLED		= '"C"';
 const CODE_URGENT		= 3;
 const CODE_NEARDUE		= 7;
 
