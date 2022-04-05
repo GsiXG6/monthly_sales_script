@@ -124,10 +124,9 @@ Excel.run(async (context) =>
 		{
 			console.log( `=========== Sheeet "${sheet.name}" Loaded ==========`);
 			sheet.activate();
-			//sheet.protection.unprotect("1");
-			sheet.protection.protect({}, "1");
-			continue;
-			
+			sheet.protection.unprotect("1");
+			//sheet.protection.protect({}, "1");
+			//continue;
 			
 			//----------------------- --------------------------------------//
 			//------------ COLUMN, ROW, SIZE AND TAG STRUCTURE -------------//
@@ -285,7 +284,7 @@ function InsertFormula(sheet)
 		let iii = "I" + i;
 		let lll = "L" + i;
 		sheet.getRange("M" + i).formulas = `=IF(AND(${iii}<>"",${lll}<>${CODE_COMPLETED},${lll}<>${CODE_PENDING},${lll}<>${CODE_FORWARD},${lll}<>${CODE_CANCLED}),${iii}-TODAY(),IF(${lll}=${CODE_COMPLETED},${CODE_COMPLETED},IF(${lll}=${CODE_PENDING},${iii}-TODAY(),IF(${lll}=${CODE_FORWARD},${CODE_FORWARD},IF(${lll}=${CODE_CANCLED},"CANCEL","")))))`;
-		sheet.getRange("N" + i).formulas = "=K" + i + "*" + "J" + i;
+		sheet.getRange("N" + i).formulas = '=IF(L' + i + '<>"C",' + 'K' + i + '* J' + i + ',0';
 		sheet.getRange("O" + i).formulas = '=IF(M' + i + '=' + CODE_COMPLETED + ', K' + i + '* J' + i + ', 0)';
 	}
 }
